@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package CADParser;
+package gRPCFileParser;
 
-service CADParser {
+service gRPCFileParser {
     rpc parseCADFile (parseCADRequest) returns (parseCADResult) {}
 }
 
