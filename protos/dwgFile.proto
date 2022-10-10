@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package CADParser;
+
+service CADParser {
+    rpc parseCADFile (parseCADRequest) returns (parseCADResult) {}
+}
+
+message parseCADRequest{
+    MetaData metadata = 1;
+    File file = 2;
+}
+
+message parseCADResult{
+    MetaData metadata = 1;
+    File file = 2;
+}
+
+message MetaData {
+    string name = 1;
+    string type = 2;
+}
+
+message File {
+    bytes content = 1;
+}
+
+enum Status {
+    PENDING = 0;
+    IN_PROGRESS = 1;
+    SUCCESS = 2;
+    FAILED = 3;
+}
+  
